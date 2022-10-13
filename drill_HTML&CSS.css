@@ -1,24 +1,63 @@
+/*デフォルトの設定。消さないで*/
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+/**/
+
 header {
   color: red;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  background-color: transparent;
+  background-color:rgba(255, 255, 255, 0);
 }
 
-.header-left {
-  
+.header-left img{
+  width: 200px;
+}
+
+.header-left img:hover {
+  opacity: 0.7;
 }
 
 .header-right {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
+  /*background-color: blue*/
 }
-
-.header-right a {
+.header-right a:hover {
+  opacity: 0.7;
+}
+.header-link {
   text-align: center;
+  font-weight: bold;
+  color: black;
 }
 
+
+.header-link span {
+  font-size: 13px;
+}
+
+.btn-orange {
+  background-color: orange;
+  border-radius: 1000px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.small {
+  padding: 0 20px;
+}
+
+/*top-wrapper*/
 
 .top-wrapper {
   background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
@@ -30,23 +69,107 @@ header {
   margin: 0 auto;
 }
 
+.top {
+  width: fit-content;
+  text-align: center;
+  /*background-color: green;
+  background-size: cover; */
+}
+/*
+.top h1 {
+  background-color: red;
+  background-size: cover;
+}
+*/
+
+.top-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /*background-color: orange;
+  background-size: cover; */
+}
+
+.top-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.top-btns a:hover {
+  opacity: 0.7;
+}
+
+.large {
+  padding: 20px 40px;
+  background-size: cover;
+  
+}
+
+.document-request {
+  border-radius: 1000px;
+  border: 1px solid #e0e0e0;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+/*background-color: pink;
+  background-size: cover; */
+}
+
+.footnote {
+  padding-top: 100px;
+  padding-bottom: 30px;
+/*  background-color: gray; */
+}
+
+.footnote ul {
+  padding-left: 0px;
+  color: #a2a2a4;
+  font-size: 12px;
+  /*background-color: blue; */
+  
+}
+/*
+.footnote li {
+  background-color: pink;
+  background-size: cover;
+}
+*/
+
 /*introduction-wrapper*/
 .introduction-wrapper {
   background-color: orange;
+  padding:40px 0 40px 0;
 }
 
 .introduction {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
 video {
   width: 50%;
+  
 }
 
 .introduction-text {
   width: 50%;
   color: white;
   font-weight: bold;
+}
+
+.introduction-text a {
+  display: flex;
+  align-items: center;
+  color: white;
+  /*background-color: green; */
+}
+
+.introduction-text img {
+  padding-right: 10px;
 }
