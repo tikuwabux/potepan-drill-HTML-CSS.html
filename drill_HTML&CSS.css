@@ -9,16 +9,26 @@ ul {
 /**/
 
 header {
-  color: red;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: transparent;
-  background-color:rgba(255, 255, 255, 0);
+  /*padding: 20px;*/
+  
+  
+  position: absolute;
+  width: 100%;
+  padding: 20px 0;
+  /*
+  background-color: green;
+  background-size: cover;
+  */
 }
 
 .header-left img{
   width: 200px;
+  
+  
+  background-color: gray;
+  margin-left: 40px;
 }
 
 .header-left img:hover {
@@ -29,6 +39,9 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  
+  
+  margin-right: 40px;
   /*background-color: blue*/
 }
 .header-right a:hover {
@@ -75,12 +88,12 @@ header {
   /*background-color: green;
   background-size: cover; */
 }
-/*
+
 .top h1 {
   background-color: red;
   background-size: cover;
 }
-*/
+
 
 .top-images {
   display: flex;
