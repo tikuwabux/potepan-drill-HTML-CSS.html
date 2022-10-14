@@ -24,15 +24,20 @@ header {
 }
 
 .header-left img{
-  width: 200px;
+  width: auto;
+  height: 20px;
   
   
-  background-color: gray;
   margin-left: 40px;
+  
+  transition: opacity .2s;
+  /* 上は「transition: opacity .2s 0 ease;」でも意味同じ*/
+  /* background-color: gray;*/
+  
 }
 
 .header-left img:hover {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .header-right {
@@ -42,6 +47,7 @@ header {
   
   
   margin-right: 40px;
+  transition: opacity .2s;
   /*background-color: blue*/
 }
 .header-right a:hover {
@@ -75,6 +81,9 @@ header {
 .top-wrapper {
   background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
   background-size: cover;
+  
+  padding-top: 100px;
+  background-position: center;
 }
 
 .container {
@@ -90,8 +99,12 @@ header {
 }
 
 .top h1 {
+  font-size: 38px;
+  line-height: 54px;
+  /*
   background-color: red;
   background-size: cover;
+  */
 }
 
 
@@ -100,8 +113,10 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /*background-color: orange;
-  background-size: cover; */
+  /*
+  background-color: orange;
+  background-size: cover; 
+  */
 }
 
 .top-btns {
@@ -109,6 +124,8 @@ header {
   justify-content: space-between;
   margin-top: 20px;
   gap: 10px;
+  
+  transition: opacity .2s;
 }
 
 .top-btns a:hover {
@@ -138,11 +155,15 @@ header {
 /*  background-color: gray; */
 }
 
-.footnote ul {
+.footnote ul{
   padding-left: 0px;
   color: #a2a2a4;
   font-size: 12px;
   /*background-color: blue; */
+}
+.footnote a {
+  color: #a2a2a4;
+  font-size: 12px;
   
 }
 /*
@@ -155,7 +176,7 @@ header {
 /*introduction-wrapper*/
 .introduction-wrapper {
   background-color: orange;
-  padding:40px 0 40px 0;
+  padding:40px 0;
 }
 
 .introduction {
@@ -173,13 +194,29 @@ video {
 .introduction-text {
   width: 50%;
   color: white;
+}
+
+.introduction-text h2 {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  line-height: 54px;
+}
+
+.introduction-text p {
+  font-size: 16px;
   font-weight: bold;
+  line-height: 26px;
 }
 
 .introduction-text a {
   display: flex;
   align-items: center;
   color: white;
+  
+  font-size: 18px;
+  line-height: 26px;
+  width: fit-content;
   /*background-color: green; */
 }
 
