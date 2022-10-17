@@ -6,11 +6,15 @@ a {
 ul {
   list-style: none;
 }
+
+body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
+    margin: 0;
+    padding: 0;
+}
 /**/
 
 header {
-  display: flex;
-  justify-content: space-between;
+  
   /*padding: 20px;*/
   
   
@@ -18,50 +22,93 @@ header {
   width: 100%;
   padding: 20px 0;
   /*
-  background-color: green;
+  background-color: red;
   background-size: cover;
   */
+}
+
+@media screen and (max-width: 1080px) {
+  header{
+    background-color: white;
+    position: fixed;
+    z-index: 10;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
 }
 
 .header-left img{
   width: auto;
   height: 20px;
-  
-  
-  margin-left: 40px;
-  
   transition: opacity .2s;
   /* 上は「transition: opacity .2s 0 ease;」でも意味同じ*/
-  /* background-color: gray;*/
-  
+  /*
+   background-color: gray;
+  */
 }
 
 .header-left img:hover {
   opacity: .7;
 }
 
-.header-right {
+.header-right{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  /*
+  background-color: white;
+  8
+  */
+}
+
+
+.header-right ul{
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  
-  
-  margin-right: 40px;
-  transition: opacity .2s;
-  /*background-color: blue*/
+  /*
+  background-color: green
+  */
 }
-.header-right a:hover {
-  opacity: 0.7;
+
+@media screen and (max-width: 1080px) {
+  .header-right ul {
+    display: none;
+  }
 }
-.header-link {
+   
+.header-right li {
   text-align: center;
+  cursor: pointer;
+  transition: opacity .2s;
+  font-size: 14px;
+  /*
+  background-color: blue;
+  */
+}
+
+.header-right li:hover {
+  opacity: .7;
+  
+}
+
+.header-link {
+  
+  margin: 0 auto;
   font-weight: bold;
   color: black;
+  /*
+  background-color: gray;
+  */
 }
 
 
 .header-link span {
-  font-size: 13px;
+  font-size: 10px;
 }
 
 .btn-orange {
@@ -73,8 +120,89 @@ header {
 }
 
 .small {
-  padding: 0 20px;
+  display: inline-block;
+  padding: 10px 20px;
 }
+
+
+.burger {
+  width: 30px;
+  height: 30px;
+  background-image: url(imgs/burger.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 4px;
+  /*
+  下はデフォルトのpositionのプロパティ値ではz-indexがきかないため追加する
+  position: relative;
+  
+  z-index: 3;
+  */
+}
+
+#drawer-check:checked ~ .drawer-open div{
+  background-image: url(imgs/close.svg);
+}
+
+@media screen and (min-width: 1081px) {
+  .burger {
+    display: none;
+  } 
+  
+}
+
+.menu {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+
+#drawer-check:checked ~ .menu {
+  display: block;
+  background-color: rgba(0, 0, 0, .8);
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  top: 70px;
+  left: 0;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0 60px;
+  /*
+  background-color: red;
+  background-size: cover;
+  */
+}
+
+.menu li {
+  text-align: center;
+}
+
+.menu-link {
+  color: white;
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-link span {
+  color: orange;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.midium {
+  display: inline-block;
+  padding: 15px 50px;
+}
+
 
 /*top-wrapper*/
 
@@ -87,8 +215,10 @@ header {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  
+  max-width: 1140px;
 }
 
 .top {
@@ -99,7 +229,7 @@ header {
 }
 
 .top h1 {
-  font-size: 38px;
+  font-size: 35px;
   line-height: 54px;
   /*
   background-color: red;
@@ -111,7 +241,7 @@ header {
 .top-images {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
   /*
   background-color: orange;
@@ -145,8 +275,7 @@ header {
   display: flex;
   align-items: center;
   padding: 0 20px;
-/*background-color: pink;
-  background-size: cover; */
+  background-color: white;
 }
 
 .footnote {
@@ -186,21 +315,55 @@ header {
   gap: 20px;
 }
 
+@media screen and (max-width: 1024px) {
+  .introduction {
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
 video {
   width: 50%;
   
 }
 
+@media screen and (max-width: 1024px) {
+  video {
+    width: 100%;
+  }
+}
+
 .introduction-text {
   width: 50%;
   color: white;
+  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  /*
+  background-color: gray;
+  */
+ 
 }
 
+@media screen and (max-width: 1024px) {
+  .introduction-text {
+    width: 100%;
+  }
+}
+
+
 .introduction-text h2 {
-  font-size: 38px;
+  font-size: 35px;
   font-weight: 900;
   letter-spacing: .1em;
   line-height: 54px;
+  /*
+  background-color: blue;
+  */
 }
 
 .introduction-text p {
@@ -223,3 +386,5 @@ video {
 .introduction-text img {
   padding-right: 10px;
 }
+
+
