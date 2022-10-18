@@ -31,6 +31,7 @@ header {
   header{
     background-color: white;
     position: fixed;
+    top: 0;
     z-index: 10;
   }
 }
@@ -117,6 +118,7 @@ header {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .small {
@@ -204,14 +206,64 @@ nav input {
 }
 
 
-/*top-wrapper*/
 
+/*main*/
+
+@media screen and (max-width: 767px) {
+  main {
+    /*margin-top: 0px;*/
+    padding-top: 70px;
+  }
+}
+
+
+/*top-wrapper*/
 .top-wrapper {
   background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
   background-size: cover;
   
-  padding-top: 100px;
+  
   background-position: center;
+}
+
+@media screen and (max-width: 1080px) {
+  .top-wrapper {
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+   
+  .top-wrapper {
+    background-image: none;
+    /*max-width: 1080px時のmargin-topをリセット*/
+    margin-top: 0;
+    /*
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg.webp);
+    /*background-size: contain;*/
+   /*
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0 70px;
+    */
+    /*
+    background-color: gray;
+    */
+  }
+}
+
+.tablets-top-image {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .tablets-top-image {
+    /*display: none以外ならなんでもいい*/
+    display: block;
+    /*下つけないとこの要素が親要素（main）のはばを右にはみ出しちゃう。
+    その結果、main全体が左による。*/
+    width: 100%;
+  }
 }
 
 .container {
@@ -221,11 +273,39 @@ nav input {
   max-width: 1140px;
 }
 
+.top-container {
+  padding-top: 100px;
+}
+/*
+@media screen and (max-width: 1080px) {
+  .top-container {
+    padding-top: 100px;
+  }
+}
+/
+*/
+
+
+@media screen and (max-width: 767px) {
+  .top-container {
+    padding-top: 0;
+    margin-top: -45vw;
+    
+  }
+ 
+}
+
 .top {
   width: fit-content;
   text-align: center;
   /*background-color: green;
   background-size: cover; */
+}
+
+@media screen and (max-width: 767px) {
+  .top {
+    width: 100%;
+  }
 }
 
 .top h1 {
@@ -237,6 +317,15 @@ nav input {
   */
 }
 
+@media screen and (max-width: 767px) {
+  .top h1 {
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    
+    
+  }
+}
 
 .top-images {
   display: flex;
@@ -247,6 +336,32 @@ nav input {
   background-color: orange;
   background-size: cover; 
   */
+  
+}
+
+@media screen and (max-width: 767px) {
+  .top-images img:first-child {
+    width: 30%;
+    /*
+    background-color: gray;
+    */
+  }
+  
+  .top-images img:nth-child(2) {
+    width: 40%;
+    /*
+    background-color: gray;
+    */
+  }
+  
+  .top-images img:last-child {
+    width: 30%;
+    /*
+    background-color: gray;
+    */
+  }
+  
+  
 }
 
 .top-btns {
@@ -256,6 +371,13 @@ nav input {
   gap: 10px;
   
   transition: opacity .2s;
+}
+
+@media screen and (max-width: 767px) {
+  .top-btns {
+    display: block;
+    
+  }
 }
 
 .top-btns a:hover {
@@ -278,10 +400,24 @@ nav input {
   background-color: white;
 }
 
+@media screen and (max-width: 767px) {
+  .document-request {
+    display: none;
+  }
+}
+
+
 .footnote {
   padding-top: 100px;
   padding-bottom: 30px;
 /*  background-color: gray; */
+}
+
+@media screen and (max-width: 767px) {
+  .footnote {
+    padding-top: 20px;
+    
+  }
 }
 
 .footnote ul{
@@ -320,6 +456,12 @@ nav input {
     flex-direction: column;
     width: 70%;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .introduction {
+    width: 100%;
   }
 }
 
